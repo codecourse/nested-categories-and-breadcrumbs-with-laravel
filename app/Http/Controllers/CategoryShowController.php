@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class CategoryShowController extends Controller
 {
-    public function __invoke(Category $category)
+    public function __invoke(Category $categoryFromPath)
     {
         return view('categories.show', [
-            'category' => $category
+            'category' => $categoryFromPath
         ]);
     }
 }

@@ -14,7 +14,7 @@
                 <div class="p-6 text-gray-900">
                     @foreach($category->children as $child)
                         <div>
-                            <a href="{{ route('categories.show', $child) }}">{{ $child->title }}</a>
+                            <a href="{{ route('categories.show', $child->getPath()) }}">{{ $child->title }}</a>
                         </div>
                     @endforeach
                 </div>

@@ -13,7 +13,8 @@ Route::get('/categories', CategoryIndexController::class)
     ->middleware(['auth', 'verified'])
     ->name('categories');
 
-Route::get('/categories/{category:slug}', CategoryShowController::class)
+Route::get('/categories/{categoryFromPath}', CategoryShowController::class)
+    ->where('categoryFromPath', '.*')
     ->middleware(['auth', 'verified'])
     ->name('categories.show');
 

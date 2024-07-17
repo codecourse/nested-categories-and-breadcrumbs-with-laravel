@@ -14,7 +14,7 @@ Breadcrumbs::for('categories', function (BreadcrumbTrail $trail, ?Category $cate
 
     if ($category) {
         foreach ($category->ancestorsAndSelf($category->id) as $ancestor) {
-            $trail->push($ancestor->title, route('categories.show', $ancestor));
+            $trail->push($ancestor->title, route('categories.show', $ancestor->getPath()));
         }
     }
 });

@@ -1,5 +1,5 @@
 <div>
-    <a href="{{ route('categories.show', $category) }}">{{ $category->title }}</a>
+    <a href="{{ route('categories.show', $category->getPath()) }}">{{ $category->title }}</a>
 
     <div class="pl-6">
         @foreach($category->children as $child)
