@@ -10,7 +10,8 @@ class CategoryIndexController extends Controller
     public function __invoke()
     {
         return view('categories.index', [
-            'categories' => Category::whereIsRoot()->get(),
+            //'categories' => Category::whereIsRoot()->get(),
+            'categories' => Category::get()->toTree(),
         ]);
     }
 }

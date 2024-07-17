@@ -10,9 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     @foreach($categories as $category)
-                        <div>
-                            <a href="{{ route('categories.show', $category) }}">{{ $category->title }}</a>
-                        </div>
+                        <x-category-item :category="$category" />
                     @endforeach
                 </div>
             </div>
