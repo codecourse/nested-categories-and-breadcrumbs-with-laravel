@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryIndexController;
+use App\Http\Controllers\CategoryShowController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,6 +12,10 @@ Route::get('/', function () {
 Route::get('/categories', CategoryIndexController::class)
     ->middleware(['auth', 'verified'])
     ->name('categories');
+
+Route::get('/categories/{category:slug}', CategoryShowController::class)
+    ->middleware(['auth', 'verified'])
+    ->name('categories.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
